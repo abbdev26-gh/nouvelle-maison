@@ -1,114 +1,100 @@
 <template>
-   <div>
-    <AppNav class="sticky top-0 z-50 h-fit" />
-  <HeroSection />
-   <AboutUs id="about" />
-   <MissionVision id="mission" />
-   <OurServices id="services" />
-   <ContactUs id="contact" />
-   <CTASection />
-   <AppFooter />
-   </div>
+  <div>
+    <AppNav class="sticky top-0 z-50 h-fit" :content="content.navigation" />
+    <HeroSection :content="content.hero" />
+    <AboutUs id="about" :content="content.about" />
+    <MissionVision id="mission" :content="content.missionVision" />
+    <OurValues id="values" :content="content.values" />
+    <OurServices id="services" :content="content.services" />
+    <TeamSection id="team" :content="content.team" />
+    <ContactUs id="contact" :content="content.contact" />
+    <CTASection :content="content.cta" />
+    <AppFooter :content="content.footer" />
+  </div>
 </template>
 
 <script setup lang="ts">
+type HomeContent = Record<string, any>
+
+const { data: home } = await useAsyncData('home-content', () => queryCollection('home').path('/').first())
+
+if (!home.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Home content not found'
+  })
+}
+
+const rawContent = home.value as HomeContent
+const content = {
+  ...(rawContent.meta ?? {}),
+  ...rawContent
+} as HomeContent
+
+if (!content.organization) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: 'Home content is missing organization metadata'
+  })
+}
+
 useHead({
-  title: 'Nouvelle Maison - Digital-Driven Realty Solutions in Ghana',
+  title: content.title,
   meta: [
-    {
-      name: 'description',
-      content: 'Nouvelle Maison is a digital-driven realty solutions provider offering property sales, rentals, advisory, and development services in Ghana. Buy properties with certainty.'
-    },
-    {
-      name: 'keywords',
-      content: 'real estate Ghana, property sales Ghana, luxury apartments Ghana, property rental Accra, real estate investment, property development Ghana, buy property Ghana'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: 'Nouvelle Maison - Luxury Living Within Reach'
-    },
-    {
-      property: 'og:description',
-      content: 'Digital-driven realty solutions provider. Connect with homebuyers through intelligent solutions for property sales, rentals, and development in Ghana.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:url',
-      content: 'https://nouvellemaison.com'
-    },
-    {
-      property: 'og:image',
-      content: 'https://nouvellemaison.com/og-image.jpg'
-    },
-    // Twitter Card
-    {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
-      name: 'twitter:title',
-      content: 'Nouvelle Maison - Digital-Driven Realty Solutions'
-    },
-    {
-      name: 'twitter:description',
-      content: 'Luxury living within reach. Professional real estate solutions in Ghana.'
-    },
-    {
-      name: 'twitter:image',
-      content: 'https://nouvellemaison.com/twitter-image.jpg'
-    }
+    { name: 'description', content: content.description },
+    { name: 'keywords', content: content.seo.keywords.join(', ') },
+    { property: 'og:title', content: content.title },
+    { property: 'og:description', content: content.description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: content.seo.canonical },
+    { property: 'og:image', content: content.seo.ogImage },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: content.title },
+    { name: 'twitter:description', content: content.description },
+    { name: 'twitter:image', content: content.seo.twitterImage }
   ],
   link: [
     {
       rel: 'canonical',
-      href: 'https://nouvellemaison.com'
+      href: content.seo.canonical
     }
   ],
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
-        name: 'Nouvelle Maison',
-        description: 'Digital-driven realty solutions provider offering property sales, rentals, advisory, and development services in Ghana.',
-        url: 'https://nouvellemaison.com',
-        logo: 'https://nouvellemaison.com/logo.png',
+        name: content.organization.name,
+        description: content.description,
+        url: content.organization.url,
+        logo: content.organization.logo,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '123 Real Estate Avenue',
-          addressLocality: 'Accra',
-          addressCountry: 'GH'
+          streetAddress: content.organization.address.streetAddress,
+          addressLocality: content.organization.address.addressLocality,
+          addressCountry: content.organization.address.addressCountry
         },
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+233-123-456-789',
+          telephone: content.organization.telephone,
           contactType: 'Sales',
-          email: 'info@nouvellemaison.com',
+          email: content.organization.email,
           availableLanguage: ['English']
         },
-        foundingDate: '2022',
+        foundingDate: content.organization.foundingDate,
         areaServed: {
           '@type': 'Country',
           name: 'Ghana'
         },
-        serviceType: [
-          'Property Sales',
-          'Property Rentals',
-          'Property Advisory',
-          'Property Development'
-        ]
+        serviceType: content.services.items.map((service: { title: string }) => service.title)
       })
     }
   ]
 })
 
 useSeoMeta({
-  ogSiteName: 'Nouvelle Maison',
+  ogSiteName: content.organization.name,
   twitterCard: 'summary_large_image'
 })
 </script>

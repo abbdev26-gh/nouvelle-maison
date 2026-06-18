@@ -4,11 +4,23 @@
     <div class="w-full md:w-1/2 h-full bg-white/20 !backdrop-blur-3xl px-4 md:px-10 py-4 animate-slide-in">
     <button @click="$emit('closeMenu')" class="text-white font-semibold text-2xl p-4 bg-black/50 animate-scale-in"><span class="sr-only">Menu</span><PhX class="w-5 h-5 text-yellow-500" /></button>
     <ul class="mt-5 md:mt-10">
-    <li class="animate-slide-up" @click="$emit('closeMenu')" style="animation-delay: 0.1s;"><a href="/#" class="text-gray-300 text-lg md:text-xl hover:text-amber-400">Home</a></li>
-    <li class="mt-4 md:mt-10 animate-slide-up" @click="$emit('closeMenu')" style="animation-delay: 0.2s;"><a href="/#about" class="text-gray-300 text-lg md:text-xl hover:text-amber-400">About Us</a></li>
-    <li class="mt-4 md:mt-10 animate-slide-up" @click="$emit('closeMenu')" style="animation-delay: 0.3s;"><a href="/#services" class="text-gray-300 text-lg md:text-xl hover:text-amber-400">Our Services</a></li>
-    <li class="mt-4 md:mt-10 animate-slide-up" @click="$emit('closeMenu')" style="animation-delay: 0.4s;"><a href="/#mission" class="text-gray-300 text-lg md:text-xl hover:text-amber-400">Mission & Vision</a></li>
-    <li class="mt-4 md:mt-10 animate-slide-up" @click="$emit('closeMenu')" style="animation-delay: 0.5s;"><a href="/#contact" class="text-gray-300 text-lg md:text-xl hover:text-amber-400">Contact Us</a></li>
+    <li
+      v-for="(item, index) in content.menu"
+      :key="item.label"
+      class="mt-4 md:mt-10 animate-slide-up"
+      :style="{ animationDelay: `${0.1 * (index + 1)}s` }"
+      @click="$emit('closeMenu')"
+    >
+      <a
+        :href="item.href"
+        :target="item.external ? '_blank' : undefined"
+        :rel="item.external ? 'noopener noreferrer' : undefined"
+        class="text-gray-300 text-lg md:text-xl hover:text-amber-400"
+      >
+        {{ item.label }}
+        <PhArrowSquareOut v-if="item.external" class="w-5 h-5 inline-block ml-2" />
+      </a>
+    </li>
     </ul>
     </div>
     </div>
@@ -17,7 +29,14 @@
 </template>
 
 <script setup>
-import { PhX } from "@phosphor-icons/vue";
+import { PhX, PhArrowSquareOut } from "@phosphor-icons/vue";
+
+defineProps({
+  content: {
+    type: Object,
+    required: true
+  }
+});
 
 defineEmits(['closeMenu']);
 </script>

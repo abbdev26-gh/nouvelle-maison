@@ -21,8 +21,18 @@
           <h1 class="text-3xl md:text-7xl max-w-5xl font-medium text-white mb-6  items-center">
             {{ displayText }}<span class="animate-pulse text-amber-400">|</span>
         </h1>
-        <p class="text-lg hidden md:text-2xl text-gray-300 mb-8 max-w-3xl">Welcome to Nouvelle Maison crafted for comfort, style, and effortless luxury.</p>
-       <AppButton @click="$router.push('/#services')">See Our Services</AppButton>
+        <p class="text-lg hidden md:text-2xl text-gray-300 mb-8 max-w-3xl">{{ content.description }}</p>
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+       <AppButton @click="$router.push(content.primaryAction.href)">{{ content.primaryAction.label }}</AppButton>
+       <a
+         :href="content.secondaryAction.href"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-semibold px-6 py-3 transition-colors text-sm"
+       >
+         {{ content.secondaryAction.label }}
+       </a>
+        </div>
         </div>
         </div>
    
@@ -30,18 +40,18 @@
  </div>
     <div class="w-full h-16 bg-black flex items-center overflow-x-hidden relative">
         <div class="marquee-content-1 whitespace-nowrap flex items-center absolute top-0 py-4">
-            <span v-for="(text, index) in newText" :key="index" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
+            <span v-for="(text, index) in marqueeText" :key="index" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
                 {{ text }} <span class="text-amber-400 mx-4">*</span>
             </span>
-             <span v-for="(text, index) in newText" :key="index + 'dup'" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
+             <span v-for="(text, index) in marqueeText" :key="index + 'dup'" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
                 {{ text }} <span class="text-amber-400 mx-4">*</span>
             </span>
         </div>
         <div class="marquee-content-2 whitespace-nowrap flex items-center absolute top-0 py-4">
-            <span v-for="(text, index) in newText" :key="index" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
+            <span v-for="(text, index) in marqueeText" :key="index" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
                 {{ text }} <span class="text-amber-400 mx-4">*</span>
             </span>
-             <span v-for="(text, index) in newText" :key="index + 'dup2'" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
+             <span v-for="(text, index) in marqueeText" :key="index + 'dup2'" class="text-white text-base md:text-2xl font-light tracking-widest mx-4">
                 {{ text }} <span class="text-amber-400 mx-4">*</span>
             </span>
         </div>
@@ -83,24 +93,43 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const texts = [
-  "LUXURY LIVING WITHIN REACH",
-  "ALL-IN-ONE DIGITAL REALTY SOLUTIONS",
-]
+type HeroContent = {
+  titleRotations: string[]
+  marquee: string[]
+  description: string
+  primaryAction: {
+    label: string
+    href: string
+  }
+  secondaryAction: {
+    label: string
+    href: string
+  }
+}
 
-const newText = [
-  "NOUVELLE MAISON",
-  "Crafted for comfort, style, and effortless luxury",
-]
+const { content } = defineProps<{
+  content: HeroContent
+}>()
+
+const texts = content.titleRotations
+const marqueeText = content.marquee
 
 const displayText = ref('')
 const currentTextIndex = ref(0)
 const currentCharIndex = ref(0)
 const isDeleting = ref(false)
-let typingTimeout: NodeJS.Timeout
+let typingTimeout: ReturnType<typeof setTimeout> | undefined
 
 const typeWriter = () => {
+  if (!texts.length) {
+    displayText.value = ''
+    return
+  }
+
   const currentText = texts[currentTextIndex.value]
+  if (!currentText) {
+    return
+  }
   
   if (!isDeleting.value) {
     // Typing
