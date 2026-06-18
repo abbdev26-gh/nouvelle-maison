@@ -1,29 +1,96 @@
 ---
 title: Nouvelle Maison - Digital-Driven Realty Solutions in Ghana
+about:
+  pretitle: About Us
+  title: Who We Are
+  paragraphs:
+    - Nouvelle Maison is a digital-driven realty solutions provider. We offer intelligent solutions that empower homeowners, property buyers, investors and real estate agents to make informed decisions in the purchase and sale of properties.
+    - Founded in 2022 with the aim of providing real-time all-in-one property solutions backed by digital technology, we bring professionalism into real estate business by providing scientific but flexible service delivery that gives power to the buyer. We offer eco-friendly property development, digital-driven property sales and rental solutions, and data-powered property advisory and management services.
+  stats:
+    - value: 10
+      label: Exciting Destinations
+    - value: 12
+      label: Online Marketplaces
+contact:
+  pretitle: Contact Us
+  title: Get In Touch
+  infoTitle: Contact Information
+  locationLabel: Location
+  phoneLabel: Phone
+  emailLabel: Email
+  addressLines:
+    - Nouvelle Maison Ltd.
+    - No. 36 Lagos Avenue,
+    - East Legon, Ghana
+  phones:
+    - +233 (0) 302523984
+    - +233 (0) 303983219
+    - +233 (0) 257728848
+  emails:
+    - info@nouvellemaisonlimited.com
+    - sales@nouvellemaisonlimited.com
+  mapEmbedUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2412.5933015912024!2d-0.17356384295664648!3d5.634885157066893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b42a6b34419%3A0x7aa2cc4f20e6bc3d!2sLagos%20Ave%2C%20Accra!5e0!3m2!1sen!2sgh!4v1765201297944!5m2!1sen!2sgh
+cta:
+  title: Ready to Find Your Dream Property?
+  description: Browse our exclusive listings and discover exceptional properties across our 10 exciting destinations.
+  primaryAction:
+    label: View Our Projects
+    href: https://listings.nouvellemaisonlimited.com
+    external: true
+  secondaryAction:
+    label: Contact Us
+    href: /#contact
 description: Digital-driven realty solutions provider offering property sales, rentals, advisory, and development services in Ghana.
-seo:
-  keywords:
-    - real estate Ghana
-    - property sales Ghana
-    - luxury apartments Ghana
-    - property rental Accra
-    - real estate investment
-    - property development Ghana
-    - buy property Ghana
-  canonical: https://nouvellemaison.com
-  ogImage: https://nouvellemaison.com/og-image.jpg
-  twitterImage: https://nouvellemaison.com/twitter-image.jpg
-organization:
-  name: Nouvelle Maison
-  logo: https://nouvellemaison.com/logo.png
-  url: https://nouvellemaison.com
-  foundingDate: '2022'
-  email: info@nouvellemaisonlimited.com
-  telephone: +233-123-456-789
-  address:
-    streetAddress: 36 Lagos Avenue
-    addressLocality: East Legon
-    addressCountry: GH
+footer:
+  addressTitle: Address
+  callTitle: Call Us
+  emailTitle: Email Us
+  exploreTitle: Explore
+  addressLines:
+    - Nouvelle Maison Ltd.
+    - No. 36 Lagos Avenue,
+    - East Legon, Ghana
+  phones:
+    - +233 (0) 302523984
+    - +233 (0) 303983219
+    - +233 (0) 257728848
+  emails:
+    - info@nouvellemaisonlimited.com
+    - sales@nouvellemaisonlimited.com
+  links:
+    - label: Home
+      href: /#
+    - label: About Us
+      href: /#about
+    - label: Our Services
+      href: /#services
+    - label: Contact Us
+      href: /#contact
+    - label: View Our Projects
+      href: https://listings.nouvellemaisonlimited.com
+      external: true
+  copyright: © 2025 Nouvelle Maison Ltd. All rights reserved.
+hero:
+  titleRotations:
+    - LUXURY LIVING WITHIN REACH
+    - ALL-IN-ONE DIGITAL REALTY SOLUTIONS
+  marquee:
+    - NOUVELLE MAISON
+    - Crafted for comfort, style, and effortless luxury
+  description: Welcome to Nouvelle Maison crafted for comfort, style, and effortless luxury.
+  primaryAction:
+    label: See Our Services
+    href: /#services
+  secondaryAction:
+    label: View Our Projects
+    href: https://listings.nouvellemaisonlimited.com
+    external: true
+missionVision:
+  sections:
+    - pretitle: Our Mission
+      title: To offer all-in-one property solutions backed by digital technologies that simplify and enhance the living experience of our clients.
+    - pretitle: Our Vision
+      title: To become the foremost digital-driven property solutions firm in Africa by 2030.
 navigation:
   brand: Nouvelle Maison
   contactLabel: Contact Us
@@ -42,64 +109,31 @@ navigation:
     - label: View Our Projects
       href: https://listings.nouvellemaisonlimited.com
       external: true
-hero:
-  titleRotations:
-    - LUXURY LIVING WITHIN REACH
-    - ALL-IN-ONE DIGITAL REALTY SOLUTIONS
-  marquee:
-    - NOUVELLE MAISON
-    - Crafted for comfort, style, and effortless luxury
-  description: Welcome to Nouvelle Maison crafted for comfort, style, and effortless luxury.
-  primaryAction:
-    label: See Our Services
-    href: /#services
-  secondaryAction:
-    label: View Our Projects
-    href: https://listings.nouvellemaisonlimited.com
-    external: true
-about:
-  pretitle: About Us
-  title: Who We Are
-  paragraphs:
-    - >-
-      Nouvelle Maison is a digital-driven realty solutions provider. We offer
-      intelligent solutions that empower homeowners, property buyers,
-      investors and real estate agents to make informed decisions in the
-      purchase and sale of properties.
-    - >-
-      Founded in 2022 with the aim of providing real-time all-in-one property
-      solutions backed by digital technology, we bring professionalism into
-      real estate business by providing scientific but flexible service
-      delivery that gives power to the buyer. We offer eco-friendly property
-      development, digital-driven property sales and rental solutions, and
-      data-powered property advisory and management services.
-  stats:
-    - value: 10
-      label: Exciting Destinations
-    - value: 12
-      label: Online Marketplaces
-missionVision:
-  sections:
-    - pretitle: Our Mission
-      title: To offer all-in-one property solutions backed by digital technologies that simplify and enhance the living experience of our clients.
-    - pretitle: Our Vision
-      title: To become the foremost digital-driven property solutions firm in Africa by 2030.
-values:
-  pretitle: Our Values
-  title: Why Choose Nouvelle Maison
-  items:
-    - icon: star
-      title: Experience Quality
-      description: In a rapidly evolving sector in Africa, Nouvelle Maison ensures the delivery of refreshing property designs and high quality projects. By ensuring that all projects are executed according to high standards, we are able to boost property values, attract buyers and also enhance safety.
-    - icon: headset
-      title: Experience Exceptional Client Service
-      description: In our quest to deliver superior value for our clients, we strive to understand each client's unique preferences and provide custom-made designs and projects that delight them. Our virtual immersive solutions ensure that clients from far and near get access to remote property viewing and also visualize customization at all stages of their project.
-    - icon: chart
-      title: Experience Superior Returns
-      description: At Nouvelle Maison, we understand how investment in properties helps individuals and organizations build a legacy through long-term stability and wealth accumulation. We collaborate with clients along the way to ensure that properties yield returns that meet their short-to-long-term investment goals.
-    - icon: shield
-      title: Experience Integrity
-      description: Committed to uncompromising ethical and legal principles, we ensure transparency in all transactions while maintaining the strict confidentiality our clients deserve. This commitment defines our corporate culture and strengthens the trust placed in us.
+organization:
+  name: Nouvelle Maison
+  logo: https://nouvellemaison.com/logo.png
+  url: https://nouvellemaison.com
+  foundingDate: "2022"
+  email: info@nouvellemaisonlimited.com
+  telephone: +233-123-456-789
+  address:
+    streetAddress: 36 Lagos Avenue
+    addressLocality: East Legon
+    addressCountry: GH
+seoMeta:
+  keywords:
+    - real estate Ghana
+    - property sales Ghana
+    - property rentals Ghana
+    - property advisory
+    - property development
+    - property management
+    - Nouvelle Maison
+    - digital realty solutions
+    - East Legon real estate
+  canonical: https://nouvellemaison.com
+  ogImage: https://nouvellemaison.com/og-image.png
+  twitterImage: https://nouvellemaison.com/twitter-image.png
 services:
   pretitle: Our Services
   title: What We Offer
@@ -142,62 +176,20 @@ team:
     - name: Mr. Odei
       role: Project Consultant
       photo: https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80
-contact:
-  pretitle: Contact Us
-  title: Get In Touch
-  infoTitle: Contact Information
-  locationLabel: Location
-  phoneLabel: Phone
-  emailLabel: Email
-  addressLines:
-    - Nouvelle Maison Ltd.
-    - No. 36 Lagos Avenue,
-    - East Legon, Ghana
-  phones:
-    - +233 (0) 302523984
-    - +233 (0) 303983219
-    - +233 (0) 257728848
-  emails:
-    - info@nouvellemaisonlimited.com
-    - sales@nouvellemaisonlimited.com
-  mapEmbedUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2412.5933015912024!2d-0.17356384295664648!3d5.634885157066893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b42a6b34419%3A0x7aa2cc4f20e6bc3d!2sLagos%20Ave%2C%20Accra!5e0!3m2!1sen!2sgh!4v1765201297944!5m2!1sen!2sgh
-cta:
-  title: Ready to Find Your Dream Property?
-  description: Browse our exclusive listings and discover exceptional properties across our 10 exciting destinations.
-  primaryAction:
-    label: View Our Projects
-    href: https://listings.nouvellemaisonlimited.com
-    external: true
-  secondaryAction:
-    label: Contact Us
-    href: /#contact
-footer:
-  addressTitle: Address
-  callTitle: Call Us
-  emailTitle: Email Us
-  exploreTitle: Explore
-  addressLines:
-    - Nouvelle Maison Ltd.
-    - No. 36 Lagos Avenue,
-    - East Legon, Ghana
-  phones:
-    - +233 (0) 302523984
-    - +233 (0) 303983219
-    - +233 (0) 257728848
-  emails:
-    - info@nouvellemaisonlimited.com
-    - sales@nouvellemaisonlimited.com
-  links:
-    - label: Home
-      href: /#
-    - label: About Us
-      href: /#about
-    - label: Our Services
-      href: /#services
-    - label: Contact Us
-      href: /#contact
-    - label: View Our Projects
-      href: https://listings.nouvellemaisonlimited.com
-      external: true
-  copyright: "© 2025 Nouvelle Maison Ltd. All rights reserved."
+values:
+  pretitle: Our Values
+  title: Why Choose Nouvelle Maison
+  items:
+    - icon: star
+      title: Experience Quality
+      description: In a rapidly evolving sector in Africa, Nouvelle Maison ensures the delivery of refreshing property designs and high quality projects. By ensuring that all projects are executed according to high standards, we are able to boost property values, attract buyers and also enhance safety.
+    - icon: headset
+      title: Experience Exceptional Client Service
+      description: In our quest to deliver superior value for our clients, we strive to understand each client's unique preferences and provide custom-made designs and projects that delight them. Our virtual immersive solutions ensure that clients from far and near get access to remote property viewing and also visualize customization at all stages of their project.
+    - icon: chart
+      title: Experience Superior Returns
+      description: At Nouvelle Maison, we understand how investment in properties helps individuals and organizations build a legacy through long-term stability and wealth accumulation. We collaborate with clients along the way to ensure that properties yield returns that meet their short-to-long-term investment goals.
+    - icon: shield
+      title: Experience Integrity
+      description: Committed to uncompromising ethical and legal principles, we ensure transparency in all transactions while maintaining the strict confidentiality our clients deserve. This commitment defines our corporate culture and strengthens the trust placed in us.
 ---

@@ -42,21 +42,21 @@ useHead({
   title: content.title,
   meta: [
     { name: 'description', content: content.description },
-    { name: 'keywords', content: content.seo.keywords.join(', ') },
+    { name: 'keywords', content: content.seoMeta.keywords.join(', ') },
     { property: 'og:title', content: content.title },
     { property: 'og:description', content: content.description },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: content.seo.canonical },
-    { property: 'og:image', content: content.seo.ogImage },
+    { property: 'og:url', content: content.seoMeta.canonical },
+    { property: 'og:image', content: content.seoMeta.ogImage },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: content.title },
     { name: 'twitter:description', content: content.description },
-    { name: 'twitter:image', content: content.seo.twitterImage }
+    { name: 'twitter:image', content: content.seoMeta.twitterImage }
   ],
   link: [
     {
       rel: 'canonical',
-      href: content.seo.canonical
+      href: content.seoMeta.canonical
     }
   ],
   script: [
