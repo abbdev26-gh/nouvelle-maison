@@ -62,8 +62,8 @@ onMounted(() => {
     
     // Trigger animation on hover
     buttonRef.value.addEventListener('mouseenter', () => {
-      const circle = buttonRef.value?.querySelector('.cursor-dot animateMotion')
-      if (circle) {
+      const circle = buttonRef.value?.querySelector('.cursor-dot animateMotion') as SVGAnimationElement | null
+      if (circle?.beginElement) {
         circle.beginElement()
       }
     })
