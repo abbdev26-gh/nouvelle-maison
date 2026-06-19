@@ -16,6 +16,12 @@ export default defineNuxtConfig({
     'node-waves/dist/waves.min.css'
   ],
     studio: {
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'abbdev26-gh',
+      repo: 'nouvelle-maison',
+      branch: 'main'
+    },
     route: '/admin',
   },
     nitro: {
