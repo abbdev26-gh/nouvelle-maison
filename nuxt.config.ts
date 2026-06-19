@@ -15,6 +15,17 @@ export default defineNuxtConfig({
     './app/assets/css/main.css',
     'node-waves/dist/waves.min.css'
   ],
+    studio: {
+    route: '/admin',
+  },
+    nitro: {
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
+    }
+  },
   app: {
     head: {
       charset: 'utf-8',
